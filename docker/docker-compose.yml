@@ -23,12 +23,9 @@ services:
       DSPACE_REST_HOST: ${DSPACE_HOST:-localhost}
       DSPACE_REST_PORT: ${DSPACE_REST_PORT}
       DSPACE_REST_NAMESPACE: /server
-    image: ${DSPACE_UI_IMAGE:-ufal/dspace-angular:dspace-7_x}
+    image: ghcr.io/uib-ub/uib-ub/dspace-angular:latest
     volumes:
     - ./config.prod.yml:/app/config/config.prod.yml
-    build:
-      context: ..
-      dockerfile: Dockerfile
     networks:
       dspacenet:
     entrypoint: ${FE_CMD:-/bin/sh -c "pm2-runtime start docker/dspace-ui.json > /dev/null 2> /dev/null"}
