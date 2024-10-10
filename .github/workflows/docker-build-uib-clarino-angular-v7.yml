@@ -1,4 +1,4 @@
-name: Docker image build for uib clarino angular v7
+name: Docker image build for uib clarino angular v7 distribution
 
 on:
   workflow_dispatch:
@@ -38,7 +38,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: Dockerfile
+          file: Dockerfile.dist
           push: true
           tags: |
             ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}-dist:latest
