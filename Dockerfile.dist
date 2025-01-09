@@ -1,6 +1,6 @@
 # This image will be published as dspace/dspace-angular:$DSPACE_VERSION-dist
 # See https://github.com/DSpace/dspace-angular/tree/main/docker for usage details
-
+# 
 # Test build:
 # docker build -f Dockerfile.dist -t dspace/dspace-angular:dspace-7_x-dist .
 
