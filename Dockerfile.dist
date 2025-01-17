@@ -1,6 +1,6 @@
 # This image will be published as dspace/dspace-angular:$DSPACE_VERSION-dist
 # See https://github.com/DSpace/dspace-angular/tree/main/docker for usage details
-# 
+#
 # Test build:
 # docker build -f Dockerfile.dist -t dspace/dspace-angular:dspace-7_x-dist .
 
@@ -27,6 +27,9 @@ COPY --chown=node:node config /app/config
 COPY --chown=node:node docker/dspace-ui.json /app/dspace-ui.json
 
 WORKDIR /app
+
+COPY config/config.yml /app/config/config.production.yaml
+
 USER 1000
 ENV NODE_ENV=production
 EXPOSE 4000
