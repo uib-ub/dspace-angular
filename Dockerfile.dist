@@ -33,6 +33,7 @@ WORKDIR /app
 COPY $CONFIG_YML /app/config/config.production.yaml
 
 USER 1000
+RUN apk add--update netstat
 ENV NODE_ENV=production
 EXPOSE 4000
 CMD ["pm2-runtime", "start", "dspace-ui.json", "--json"]

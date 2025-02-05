@@ -6,7 +6,7 @@
       "script": "dist/server/main.js",
       "time": true,
       "instances": "1",
-      "exec_mode": "fork",
+      "exec_mode": "cluster",
       "node_args": "--max_old_space_size=600",
       "max_memory_restart": "1000M",
       "env": {"NODE_ENV": "production"}
