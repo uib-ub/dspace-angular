@@ -20,15 +20,17 @@ ADD . /app/
 RUN yarn build:prod
 
 FROM node:18-alpine
+ARG CONFIG_YML=config/config.yml
+ARG DSPACE_UI_JSON=docker/dspace-ui.json
 RUN npm install --global pm2
 
 COPY --chown=node:node --from=build /app/dist /app/dist
 COPY --chown=node:node config /app/config
-COPY --chown=node:node docker/dspace-ui.json /app/dspace-ui.json
+COPY --chown=node:node $DSPACE_UI_JSON /app/dspace-ui.json
 
 WORKDIR /app
 
-COPY config/config.yml /app/config/config.production.yaml
+COPY $CONFIG_YML /app/config/config.production.yaml
 
 USER 1000
 ENV NODE_ENV=production
