@@ -31,6 +31,7 @@ COPY --chown=node:node $DSPACE_UI_JSON /app/dspace-ui.json
 WORKDIR /app
 
 COPY $CONFIG_YML /app/config/config.production.yaml
+RUN apk add --update net-tools
 
 USER 1000
 ENV NODE_ENV=production
