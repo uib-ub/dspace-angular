@@ -5,10 +5,10 @@
       "cwd": "/app",
       "script": "dist/server/main.js",
       "time": true,
-      "instances": "7",
-      "exec_mode": "cluster",
-      "node_args": "--max_old_space_size=1344",
-      "max_memory_restart": "2G",
+      "instances": "1",
+      "exec_mode": "fork",
+      "node_args": "--max_old_space_size=400",
+      "max_memory_restart": "500",
       "env": {"NODE_ENV": "production"}
     }
   ]
