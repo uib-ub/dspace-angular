@@ -32,8 +32,6 @@ WORKDIR /app
 
 COPY $CONFIG_YML /app/config/config.production.yaml
 
-RUN apk add --update netstat
-
 USER 1000
 ENV NODE_ENV=production
 EXPOSE 4000
