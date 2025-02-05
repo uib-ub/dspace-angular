@@ -7,8 +7,8 @@
       "time": true,
       "instances": "1",
       "exec_mode": "fork",
-      "node_args": "--max_old_space_size=400",
-      "max_memory_restart": "1000",
+      "node_args": "--max_old_space_size=400M",
+      "max_memory_restart": "1000M",
       "env": {"NODE_ENV": "production"}
     }
   ]
