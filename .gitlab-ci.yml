@@ -45,12 +45,9 @@ image: docker:stable
       - gl-container-scanning-report.txt
 
 
-
-
 # Stages
 stages:
 - build
-- matomo
 - deploy
 
 build_container:
@@ -62,46 +59,30 @@ build_container:
   extends:
     - .build_container_image
 
+build_matomo:
+  stage: build
+  variables:
+  dir: docker/matomo
+  image_name: matomo
+  dockerfile: .
+  extends:
+  - .build_container_image
+
 promote_prod:
   stage: deploy
   variables:
     image_name: dspace-angular-dist
     existing_tag: $CI_COMMIT_SHORT_SHA
+  parallel:
+    matrix:
+    - image_name:
+      - dspace-angular-dist
+      - matomo
   before_script:
     - apk add git
     - new_tag=$(git describe --tags | tr "-" "." | cut -d "." -f1-3 | grep "[0-9]\.[0-9]\.[0-9]" || echo "$(git describe --tags).0")
     - echo "Existing tag is $existing_tag, new tag is $new_tag"
   extends:
     - .promote
-  needs:
-    - build_container
-
-
-
-
-.matomo-import:
-  script:
-    - *docker_login
-    - docker pull $image_name:$image_tag
-    - docker tag $image_name:$image_tag $CI_REGISTRY_IMAGE/$image_name:$image_tag
-    - docker tag $image_name:$image_tag $CI_REGISTRY_IMAGE/$image_name:${CI_PIPELINE_ID}
-    - docker tag $image_name:$image_tag $CI_REGISTRY_IMAGE/$image_name:${DUMMY_VERSION}
-    - docker tag $image_name:$image_tag $CI_REGISTRY_IMAGE/$image_name:latest
-    - docker push $CI_REGISTRY_IMAGE/$image_name:$image_tag
-    - docker push $CI_REGISTRY_IMAGE/$image_name:${CI_PIPELINE_ID}
-    - docker push $CI_REGISTRY_IMAGE/$image_name:${DUMMY_VERSION}
-    - docker push $CI_REGISTRY_IMAGE/$image_name:latest
-
-matomo-import:
-  stage: matomo
-  variables:
-    image_name: matomo
-    image_tag: 5
-    DUMMY_VERSION: 5
-  extends:
-    - .matomo-import
-  #rules:
-  #  - if: '$CI_PIPELINE_SOURCE == "schedule"'
-
-
+  when: manual
 
