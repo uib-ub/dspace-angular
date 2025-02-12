@@ -62,9 +62,9 @@ build_container:
 build_matomo:
   stage: build
   variables:
-  dir: docker/matomo
-  image_name: matomo
-  dockerfile: .
+    dir: docker/matomo
+    image_name: matomo
+    dockerfile: .
   extends:
   - .build_container_image
 
