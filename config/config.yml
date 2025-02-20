@@ -141,6 +141,6 @@ languages:
     active: false
 
 matomo:
-  hostUrl: http://matomo:8135/
+  hostUrl: https://clarino-matomo.bgo1.test.rail.uib.no/
   siteId: 1
 
