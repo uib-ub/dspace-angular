@@ -2,6 +2,7 @@
 # It only updates the port for startup
 # user instruction is not added, but the default www user (33?)
 # id can be used from a k8s platform
+# 5.3.0
 
 FROM matomo:5-apache
 ARG MATOMO_PORT=8135
