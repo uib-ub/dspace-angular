@@ -9,6 +9,7 @@ ARG MATOMO_PORT=8135
 RUN   sed -i "/^\s*Listen 80/c\Listen $MATOMO_PORT" /etc/apache2/*.conf; \
       sed -i "/^\s*<VirtualHost \\*:80>/c\\<VirtualHost \*:$MATOMO_PORT>" /etc/apache2/sites-available/000-default.conf; \
       cat  /etc/apache2/sites-available/000-default.conf; \
-      cat /etc/apache2/ports.conf
+      cat /etc/apache2/ports.conf; \
+      ln -s /config/config.ini.php /var/www/html/config/config.ini.php
 EXPOSE 8135
 
