@@ -10,6 +10,7 @@ RUN   sed -i "/^\s*Listen 80/c\Listen $MATOMO_PORT" /etc/apache2/*.conf; \
       sed -i "/^\s*<VirtualHost \\*:80>/c\\<VirtualHost \*:$MATOMO_PORT>" /etc/apache2/sites-available/000-default.conf; \
       cat  /etc/apache2/sites-available/000-default.conf; \
       cat /etc/apache2/ports.conf; \
-      ln -sf /config/config.ini.php /var/www/html/config/config.ini.php
+      mv /entrypoint.sh /original-entrypoint.sh
+COPY --chown=33:33 --chmod=0550 entrypoint.sh /entrypoint.sh
 EXPOSE 8135
 
