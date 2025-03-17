@@ -6,3 +6,5 @@ set -euo pipefail
 
 # add symlink to config, not available before mounting
 ln -sf /config/config.ini.php /var/www/html/config/config.ini.php
+
+exec "$@"
