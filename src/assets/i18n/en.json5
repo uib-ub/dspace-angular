@@ -2019,6 +2019,9 @@
 
   "handle-table.edit-handle.form-button-submit": "Submit",
 
+  "handle-table.edit-handle.form-id-input-text": "ID",
+
+  "handle-table.edit-handle.form-id-input-placeholder": "...",
 
   "handle-page.title": "Handles",
 
@@ -2026,7 +2029,7 @@
 
   "handle-table.table.handle": "Handle",
 
-  "handle-table.table.internal": "Internal",
+  "handle-table.table.internal": "Is Internal",
 
   "handle-table.table.is-internal": "Yes",
 
@@ -2828,6 +2831,10 @@
   "item.preview.authors.show.everyone": "Show everyone",
 
   "item.preview.authors.et.al": " ; et al.",
+
+  "item.preview.loading-files": "Loading files... This may take a few seconds as file previews are being generated. If the process takes too long, please contact the system administrator",
+
+  "item.preview.no-preview": "The file preview has not been generated yet. Please try again later or contact the system administrator",
 
   "item.refbox.modal.copy.instruction": ["Press", "ctrl + c", "to copy"],
 
@@ -5975,4 +5982,6 @@
   "change.submitter.page.items.handle.message": "Item's handle: ",
 
   "change.submitter.page.items.name.message": "Item's name: ",
+
+  "clarin-license-agreement-page.download-error": "An error occurred while downloading the file. Please try again later.",
 }
