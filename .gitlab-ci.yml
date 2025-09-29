@@ -1,4 +1,4 @@
-image: docker:stable
+image: docker:28
 # 1.0.6
 # Anchors  
 .docker_login: &docker_login
@@ -57,13 +57,15 @@ build_container:
     dockerfile: Dockerfile.dist
   extends:
     - .build_container_image
+  tags:
+  - p1
 
 build_matomo:
   stage: build
   variables:
     dir: docker/matomo
     image_name: matomo
-    dockerfile: .
+    dockerfile: Dockerfile
   extends:
   - .build_container_image
 
