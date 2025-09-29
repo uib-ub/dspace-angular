@@ -12,12 +12,12 @@ RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
 
 WORKDIR /app
 COPY package.json yarn.lock ./
-RUN yarn install  --pure-lockfile --network-timeout 300000
+RUN --mount=type=cache,target=/app/.yarn-cache yarn install --cache-folder .yarn-cache  --frozen-lockfile --network-timeout 300000
 
 ENV NODE_OPTIONS="--max_old_space_size=4096"
 
 ADD . /app/
-RUN yarn build:prod
+RUN  --mount=type=cache,target=/app/.angular/cache yarn build:prod
 
 FROM node:18-alpine
 ARG CONFIG_YML=config/config.yml
