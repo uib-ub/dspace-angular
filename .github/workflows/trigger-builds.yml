@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   trigger-builds:
+    if: github.repository == 'ufal/dspace-angular'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
