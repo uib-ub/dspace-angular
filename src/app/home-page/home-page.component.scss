@@ -109,6 +109,22 @@
     position: absolute; width: 65%; top: 20%; left: 20%; line-height: 20px;
   }
 
+  .carousel-clarino-header {
+    left: 28%; position: absolute; top: 30%; margin-top: 10px; margin-bottom: 10px; font-size: 14px;
+  }
+
+  .carousel-clarino-repository {
+    left: 32%; position: absolute; top: 42%; margin-top: 10px; margin-bottom: 10px; font-size: 14px;
+  }
+
+  .carousel-clarino-corpora {
+    left: 36%; position: absolute; top: 54%; margin-top: 10px; margin-bottom: 10px; font-size: 14px;
+  }
+
+  .carousel-clarino-cmdi {
+    position: absolute; width: 65%; top: 20%; left: 20%; line-height: 20px;
+  }
+
   .input-group-addon {
     height: 48px;
     padding: 14px 16px;
@@ -179,6 +195,22 @@
     }
 
     .carousel-deposit-citation {
+      width: 100%;
+    }
+
+    .carousel-clarino-header {
+      margin-top: 17px;
+    }
+
+    .carousel-clarino-repository {
+      margin-top: 17px;
+    }
+
+    .carousel-clarino-corpora {
+      margin-top: 17px;
+    }
+
+    .carousel-clarino-cmdi {
       width: 100%;
     }
   }
