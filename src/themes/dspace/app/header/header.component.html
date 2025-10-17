@@ -17,22 +17,25 @@
             <div class="lindat-block lindat-block--clariah-theme-main-menu">
               <ul class="lindat-nav lindat-navbar-nav">
                 <li class="lindat-nav-item ">
-                  <a href="/services/catalog" class="lindat-nav-link">{{'navbar.community-list' | translate}}</a>
+                  <a href="/repository" class="lindat-nav-link">{{'navbar.repository' | translate}}</a>
                 </li>
                 <li class="lindat-nav-item ">
-                  <a routerLink="home" class="lindat-nav-link">{{'navbar.repository' | translate}}</a>
+                  <a routerLink="home" class="lindat-nav-link">{{'navbar.news' | translate}}</a>
                 </li>
                 <li class="lindat-nav-item ">
-                  <a href="{{ '/' + getLangCodeIfCzech() + '#education' }}" class="lindat-nav-link">{{'navbar.education' | translate}}</a>
+                  <a href="https://clarino.uib.no/iness" class="lindat-nav-link">INESS</a>
                 </li>
                 <li class="lindat-nav-item ">
-                  <a href="{{ '/' + getLangCodeIfCzech() + '#projects' }}" class="lindat-nav-link">{{'navbar.project' | translate}}</a>
+                  <a href="https://clarino.uib.no/comedi" class="lindat-nav-link">COMEDI</a>
                 </li>
                 <li class="lindat-nav-item ">
-                  <a href="{{ '/' + getLangCodeIfCzech() + '#tools' }}" class="lindat-nav-link ">{{'navbar.tools' | translate}}</a>
+                  <a href="https://clarino.uib.no/corpuscle" class="lindat-nav-link">Corpuscle</a>
                 </li>
                 <li class="lindat-nav-item ">
-                  <a href="{{ '/' + getLangCode() + '/' + translateSlug('services') }}" class="lindat-nav-link ">{{'navbar.services' | translate}}</a>
+                  <a href="https://menota.org" class="lindat-nav-link ">Menota</a>
+                </li>
+                <li class="lindat-nav-item ">
+                  <a href="https://termportalen.no" class="lindat-nav-link ">Termportalen</a>
                 </li>
                 <li class="lindat-nav-item lindat-dropdown">
                   <a href="{{ '/' + getLangCodeIfCzech() }}" class="lindat-nav-link lindat-dropdown-toggle"
@@ -40,11 +43,9 @@
                      onclick="this.parentNode.querySelector('.lindat-dropdown-toggle+div.lindat-dropdown-menu').classList.toggle('lindat-show'); return false;">{{'navbar.about' | translate}}</a>
                   <div class="lindat-dropdown-menu">
                     <a href="{{ '/' + translateSlug('partners') }}" class="lindat-dropdown-item">{{'navbar.about.partners' | translate}}</a>
-                    <a href="/files/mission-en.pdf" class="lindat-dropdown-item">{{'navbar.about.mission-statement' | translate}}</a>
+                    <a href="/repository/static/about" class="lindat-dropdown-item">{{'navbar.about.mission-statement' | translate}}</a>
                     <a href="https://www.clarin.eu/" class="lindat-dropdown-item">{{'navbar.about.clarin' | translate}}</a>
                     <a href="https://www.dariah.eu/" class="lindat-dropdown-item">{{'navbar.about.dariah' | translate}}</a>
-                    <a href="{{ '/' + translateSlug('integration') }}" class="lindat-dropdown-item">{{'navbar.about.service-integrations' | translate}}</a>
-                    <a href="{{ '/' + translateSlug('partnership') }}" class="lindat-dropdown-item">{{'navbar.about.project-partnership' | translate}}</a>
                   </div>
                 </li>
               </ul>
