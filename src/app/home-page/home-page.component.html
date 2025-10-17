@@ -26,7 +26,14 @@
                   </blockquote>
                 </div>
               </div>
+              <div *ngIf="slide.short === 'CLARINO'">
+                <h3 class="h5-font carousel-clarino-header">{{'home-page.carousel.clarino.header' | translate}}</h3>
+                <h5 class="h5-font carousel-clarino-repository">{{'home-page.carousel.clarino.repository' | translate}}</h5>
+                <h5 class="h5-font carousel-clarino-corpora">{{'home-page.carousel.clarino.corpora' | translate}}</h5>
+                <h5 class="h5-font carousel-clarino-cmdi">{{'home-page.carousel.clarino.cmdi' | translate}}</h5>
+              </div>
             </div>
+
           </ng-template>
         </ngb-carousel>
       </div>

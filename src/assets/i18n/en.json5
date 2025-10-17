@@ -1959,6 +1959,14 @@
 
   "home-page.carousel.deposit.small": "Ludwig van Beethoven, 1801",
 
+  "home-page.carousel.clarino.header": "The CLARINO Bergen Centre offers:",
+
+  "home-page.carousel.clarino.repository": "A repository to search and deposit language data",
+
+  "home-page.carousel.clarino.corpora": "Online services for treebanks and other corpora",
+
+  "home-page.carousel.clarino.cmdi": "Online editing of CMDI metadata",
+
   "home-page.search": "Search",
 
   "home-page.advanced-search": "Advanced Search",
