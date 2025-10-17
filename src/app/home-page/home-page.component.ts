@@ -42,9 +42,7 @@ const MAX_TRUNCATE_LENGTH = 20;
 export class HomePageComponent implements OnInit {
 
   slides = [
-    {name: 'Linguistic Data', short: 'LData'},
-    {name: 'Deposit Free And Save', short: 'Free Deposit'},
-    {name: 'Citation', short: 'Citation'}
+    {name: 'CLARINO Repository', short: 'CLARINO'}
   ];
 
   site$: Observable<Site>;
