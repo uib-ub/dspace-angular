@@ -1,4 +1,4 @@
-dspace-angular
+Dspace-angular
 ==============
 
 > The DSpace User Interface built on [Angular](https://angular.io/), written in [TypeScript](https://www.typescriptlang.org/) and using [Angular Universal](https://angular.io/guide/universal).
