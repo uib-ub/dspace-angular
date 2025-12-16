@@ -47,7 +47,9 @@ image: docker:28
 # Stages
 stages:
 - build
+- scan
 - deploy
+
 
 build_container:
   stage: build
@@ -68,6 +70,19 @@ build_matomo:
     dockerfile: Dockerfile
   extends:
   - .build_container_image
+
+## Scans
+security_scan:
+  stage: scan
+  parallel:
+    matrix:
+      - scan_image_name: dspace-angular-dist
+        scan_image_tag: latest
+  variables:
+    image_name: $scan_image_name
+    image_tag: $scan_image_tag
+  extends:
+    - .security_scan
 
 promote_prod:
   stage: deploy
