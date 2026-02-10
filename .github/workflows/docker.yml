@@ -62,11 +62,11 @@ jobs:
       REDEPLOY_SANDBOX_URL:  ${{ secrets.REDEPLOY_SANDBOX_URL }}
       REDEPLOY_DEMO_URL:  ${{ secrets.REDEPLOY_DEMO_URL }}
 
-  deploy:
-    needs: dspace-angular
-    uses: ufal/dspace-angular/.github/workflows/deploy.yml@clarin-v7
-    if: ${{ github.event_name != 'pull_request' }}
-    with:
-      INSTANCE: '5'
-      IMPORT: false
-    secrets: inherit
+      #  deploy:
+      #    needs: dspace-angular
+      #    uses: ufal/dspace-angular/.github/workflows/deploy.yml@clarin-v7
+      #    if: ${{ github.event_name != 'pull_request' }}
+      #    with:
+      #      INSTANCE: '5'
+      #      IMPORT: false
+      #    secrets: inherit
