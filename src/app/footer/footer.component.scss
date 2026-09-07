@@ -26,9 +26,19 @@
         li {
           display: inline-flex;
 
-          a {
+          a, .btn-link {
             padding: 0 calc(var(--bs-spacer) / 2);
-            color: inherit
+            color: inherit;
+            font-size: .875em;
+
+            &:focus {
+              box-shadow: none;
+              text-decoration: underline;
+            }
+
+            &:focus-visible {
+              box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+            }
           }
 
           &:not(:last-child) {
@@ -696,7 +706,8 @@
 .lindat-common2 #badges-b {
   font-size: 10pt;
 }
-.lindat-common2 footer h4 {
+.lindat-common2 footer h4,
+.lindat-common2 footer .h4 {
   font-size: 14pt;
   line-height: 64pt;
   margin: 0;
@@ -708,10 +719,14 @@
 }
 .lindat-common2 footer h4 a,
 .lindat-common2 footer h4 a:hover,
-.lindat-common2 footer h4 a:active {
+.lindat-common2 footer h4 a:active,
+.lindat-common2 footer .h4 a,
+.lindat-common2 footer .h4 a:hover,
+.lindat-common2 footer .h4 a:active {
   text-decoration: underline;
 }
-.lindat-common2 footer #about-partners h4 {
+.lindat-common2 footer #about-partners h4,
+.lindat-common2 footer #about-partners .h4 {
   margin-left: 33%;
 }
 .lindat-common2 footer #about-partners > ul > li {
@@ -733,6 +748,9 @@
 }
 .lindat-common2 footer #about-partners > ul {
   margin-left: 1em;
+}
+.lindat-common2 #about-lindat > ul:not(:last-child) {
+  margin-bottom: 1em;
 }
 .lindat-common2 #about-lindat li,
 .lindat-common2 #about-website li,

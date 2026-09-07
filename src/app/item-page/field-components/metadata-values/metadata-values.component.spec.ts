@@ -63,6 +63,15 @@ describe('MetadataValuesComponent', () => {
     }
   });
 
+  it('should render the metadata language as a normalized BCP 47 lang attribute', () => {
+    const langEls = fixture.debugElement.queryAll(By.css('[lang]'));
+    expect(langEls.length).toBeGreaterThan(0);
+    langEls.forEach((el) => {
+      expect(el.nativeElement.getAttribute('lang')).toEqual('en-US');
+    });
+    expect(fixture.nativeElement.innerHTML).not.toContain('lang="en_US"');
+  });
+
   it('should contain separators equal to the amount of metadata values minus one', () => {
     const separators = fixture.debugElement.queryAll(By.css('span.separator'));
     expect(separators.length).toBe(mockMetadata.length - 1);
@@ -71,6 +80,22 @@ describe('MetadataValuesComponent', () => {
   it('should correctly detect a pattern on string containing "test"', () => {
     const mdValue = {value: 'This is a test value'} as MetadataValue;
     expect(comp.hasLink(mdValue)).toBe(true);
+  });
+
+  it('should return correct target and rel for internal links', () => {
+    spyOn(comp, 'hasInternalLink').and.returnValue(true);
+    const urlValue = '/internal-link';
+    const result = comp.getLinkAttributes(urlValue);
+    expect(result.target).toBe('_self');
+    expect(result.rel).toBe('');
+  });
+
+  it('should return correct target and rel for external links', () => {
+    spyOn(comp, 'hasInternalLink').and.returnValue(false);
+    const urlValue = 'https://www.dspace.org';
+    const result = comp.getLinkAttributes(urlValue);
+    expect(result.target).toBe('_blank');
+    expect(result.rel).toBe('noopener noreferrer');
   });
 
 });

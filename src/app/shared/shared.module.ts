@@ -291,12 +291,16 @@ import { BitstreamListItemComponent } from './object-list/bitstream-list-item/bi
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ThemedLangSwitchComponent } from './lang-switch/themed-lang-switch.component';
 import {ThemedUserMenuComponent} from './auth-nav-menu/user-menu/themed-user-menu.component';
+import { OrcidBadgeAndTooltipComponent } from './orcid-badge-and-tooltip/orcid-badge-and-tooltip.component';
+import { LiveRegionComponent } from './live-region/live-region.component';
+import { BtnDisabledDirective } from './btn-disabled.directive';
 import { HtmlContentService } from './html-content.service';
 import { ClarinSafeHtmlPipe } from './utils/clarin-safehtml.pipe';
 import { ReplacePipe } from './utils/replace.pipe';
 import { ClarinDateService } from './clarin-date.service';
 import { ItemIdentifierService } from './item-identifier.service';
 import { ClarinLicenseRequiredInfoCheckedPipe } from './utils/clarin-license-required-info-checked.pipe';
+import { DsLangPipe } from './utils/ds-lang.pipe';
 
 const MODULES = [
   CommonModule,
@@ -344,7 +348,8 @@ const PIPES = [
   ClarinLicenseRequiredInfoPipe,
   CharToEndPipe,
   ClarinSafeHtmlPipe,
-  ReplacePipe
+  ReplacePipe,
+  DsLangPipe
 ];
 
 const COMPONENTS = [
@@ -425,6 +430,7 @@ const COMPONENTS = [
   EpersonSearchBoxComponent,
   GroupSearchBoxComponent,
   ThemedItemPageTitleFieldComponent,
+  OrcidBadgeAndTooltipComponent,
   ClarinItemBoxViewComponent,
   ClarinItemAuthorPreviewComponent
 ];
@@ -490,7 +496,8 @@ const ENTRY_COMPONENTS = [
   AdvancedClaimedTaskActionRatingComponent,
   EpersonGroupListComponent,
   EpersonSearchBoxComponent,
-  GroupSearchBoxComponent
+  GroupSearchBoxComponent,
+  LiveRegionComponent,
 ];
 
 const PROVIDERS = [
@@ -519,6 +526,7 @@ const DIRECTIVES = [
   MetadataFieldValidator,
   HoverClassDirective,
   ContextHelpDirective,
+  BtnDisabledDirective,
 ];
 
 @NgModule({
