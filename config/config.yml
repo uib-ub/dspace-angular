@@ -171,3 +171,9 @@ languages:
   - code: uk
     label: Yкраї́нська
     active: false
+
+matomo:
+  enabled: false
+  hostUrl: https://clarino-matomo.bgo1.test.rail.uib.no/
+  siteId: 1
+

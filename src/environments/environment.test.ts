@@ -356,6 +356,7 @@ export const environment: BuildConfig = {
   signpostingEnabled: true,
 
   matomo: {
+    enabled: true,
     hostUrl: 'http://localhost:8135/',
     siteId: '1',
     dimensionId: 1

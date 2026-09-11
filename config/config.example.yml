@@ -465,5 +465,7 @@ accessibility:
   cookieExpirationDuration: 7
 
 matomo:
+  # Set false to prevent browser-side Matomo initialization and tracking.
+  enabled: true
   hostUrl: http://localhost:8135/
   siteId: 1
