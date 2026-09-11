@@ -452,6 +452,7 @@ export class DefaultAppConfig implements AppConfig {
 
   // Matomo configuration
   matomo: MatomoConfig = {
+    enabled: true,
     hostUrl: 'http://localhost:8135/',
     siteId: '1',
     dimensionId: 1

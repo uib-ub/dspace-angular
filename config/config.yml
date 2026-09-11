@@ -173,6 +173,7 @@ languages:
     active: false
 
 matomo:
+  enabled: false
   hostUrl: https://clarino-matomo.bgo1.test.rail.uib.no/
   siteId: 1
 

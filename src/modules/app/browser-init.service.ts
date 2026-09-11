@@ -105,24 +105,9 @@ export class BrowserInitService extends InitService {
       this.initAngulartics();
       this.initGoogleAnalytics();
       this.initRouteListeners();
+      this.initMatomo();
       this.themeService.listenForThemeChanges(true);
       this.trackAuthTokenExpiration();
-      // ideally we'd add the custom dimension to the 'trackPageView' action only, but don't have that information
-      // in pageTrack context. So we add it to page_view events, and remove it after the page view.
-      // page_view events are fired via view-track.component, and exposes dc.identifier.uri via properties
-      this.angulartics2Matomo.eventTrack = function (action: string, properties?: any) {
-        if (action === 'page_view') {
-          if (properties.dc_identifier) {
-            (window as any)._paq.push(['setCustomDimension', environment.matomo.dimensionId, properties.dc_identifier]);
-          }
-        }
-      };
-      let pageTrack = this.angulartics2Matomo.pageTrack;
-      this.angulartics2Matomo.pageTrack = function (path: string) {
-        pageTrack.call(this, path);
-        (window as any)._paq.push(['deleteCustomDimension', environment.matomo.dimensionId]);
-      };
-      this.angulartics2Matomo.startTracking();
 
       this.initKlaro();
 
@@ -209,6 +194,51 @@ export class BrowserInitService extends InitService {
   protected initRouteListeners(): void {
     super.initRouteListeners();
     this.serverCheckGuard.listenForRouteChanges();
+  }
+
+  /**
+   * Initialize Matomo analytics
+   *
+   * A missing enabled property retains the historical enabled behavior.
+   * An explicit false value disables handler registration and adapter startup.
+   *
+   * @protected
+   */
+  protected initMatomo(): void {
+    const matomoConfig = this.appConfig.matomo;
+
+    // Stop when the complete Matomo configuration is absent,
+    // or when the effective enabled value is not boolean true.
+    if (!matomoConfig || (matomoConfig.enabled ?? true) !== true) {
+      return;
+    }
+
+    const dimensionId = matomoConfig.dimensionId;
+
+    // ideally we'd add the custom dimension to the 'trackPageView' action only, but don't have that information
+    // in pageTrack context. So we add it to page_view events, and remove it after the page view.
+    // page_view events are fired via view-track.component, and exposes dc.identifier.uri via properties
+    this.angulartics2Matomo.eventTrack = function (action: string, properties?: any) {
+      const identifier = properties?.dc_identifier;
+      if (action === 'page_view' && identifier) {
+        (window as any)._paq.push([
+          'setCustomDimension',
+          dimensionId,
+          identifier
+        ]);
+      }
+    };
+
+    const pageTrack = this.angulartics2Matomo.pageTrack;
+    this.angulartics2Matomo.pageTrack = function (path: string) {
+      pageTrack.call(this, path);
+      (window as any)._paq.push([
+        'deleteCustomDimension',
+        dimensionId
+      ]);
+    };
+
+    this.angulartics2Matomo.startTracking();
   }
 
 }
