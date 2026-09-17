@@ -62,15 +62,6 @@ build_container:
   tags:
   - p1
 
-build_matomo:
-  stage: build
-  variables:
-    dir: docker/matomo
-    image_name: matomo
-    dockerfile: Dockerfile
-  extends:
-  - .build_container_image
-
 ## Scans
 security_scan:
   stage: scan
