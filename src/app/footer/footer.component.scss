@@ -72,7 +72,7 @@
   --navbar-background-color: #39688b;
   --footer-color: #fffc;
   --footer-background-color: #07426eff;
-  --partners-color: #9cb3c5;
+  --partners-color: #ffffff;  /* Changed from #9cb3c5 */
   /* styling for light theme; maybe this can get set from outside?
   --navbar-color: #000000;
   --navbar-background-color: #f0f0f0;
@@ -773,13 +773,13 @@
 }
 .lindat-common2 #ack-msmt {
   font-family: "Source Code Pro";
-  font-size: 8pt;
+  font-size: smaller;
   color: var(--partners-color);
 }
 .lindat-common2 #ack-ufal,
 .lindat-common2 #ack-freepik {
-  font-size: 8pt;
-  color: #7b8d9c;
+  font-size: smaller;
+  color: #ffffff;  /* Endret fra #7b8d9c */
 }
 .lindat-common2 #ack-ufal a,
 .lindat-common2 #ack-freepik a,
@@ -788,7 +788,7 @@
 .lindat-common2 #ack-ufal a:visited,
 .lindat-common2 #ack-freepik a:visited {
   text-decoration: none;
-  color: #7b8d9c;
+  color: #ffffff;  /* Endret fra #7b8d9c */
   letter-spacing: 0.01em;
 }
 
