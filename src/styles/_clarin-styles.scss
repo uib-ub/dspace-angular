@@ -18,7 +18,7 @@
 }
 
 .label-ACA, .label-PDT {
-  color: #ffab23 !important;
+  color: #754800 !important; /* Changed from ffab23 */
   background-color: #fcf8e3 !important;
 }
 
@@ -79,4 +79,8 @@ ds-home-page ds-themed-search-form {
 
 ds-rss.override-css div {
   margin-right: 0 !important;
+}
+
+a {
+    text-decoration: underline !important;
 }
