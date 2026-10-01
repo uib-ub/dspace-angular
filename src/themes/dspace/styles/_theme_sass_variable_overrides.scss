@@ -71,7 +71,7 @@ $yiq-contrasted-threshold: 170;
 $body-color: #343a40;       // As Bootstrap $gray-800
 
 $link-color: #207698;       // Blue green, as DSpace $info
-$link-decoration: none;
+$link-decoration: underline;     // Changed from none
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
 
