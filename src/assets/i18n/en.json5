@@ -1951,13 +1951,17 @@
 
   "home-page.carousel.deposit.small": "Ludwig van Beethoven, 1801",
 
-  "home-page.carousel.clarino.header": "The CLARINO Bergen Centre offers:",
+  "home-page.carousel.clarino.header": "CLARINO Bergen Centre",
 
   "home-page.carousel.clarino.repository": "A repository to search and deposit language data",
 
   "home-page.carousel.clarino.corpora": "Online services for treebanks and other corpora",
 
   "home-page.carousel.clarino.cmdi": "Online editing of CMDI metadata",
+  
+  "home-page.carousel.clarino.welcome": "Welcome to CLARINO Bergen Centre",
+  
+  "home-page.carousel.clarino.info": "CLARINO is a Norwegian infrastructure project jointly funded by the Research Council of Norway and a consortium of Norwegian universities and research institutions. Its goal is to implement the Norwegian part of CLARIN. The ultimate aim is to make existing and future language resources easily accessible for researchers and to bring eScience to humanities disciplines.",
 
   "home-page.search": "Search",
 
