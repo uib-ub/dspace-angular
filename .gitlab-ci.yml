@@ -10,12 +10,17 @@ image: docker:28
     - cd $dir
     - export TIMESTAMP=$(date +%Y-%m-%dT%H%M)
     - export TIMESTAMP_TAG=test-$TIMESTAMP
+    - echo "TIMESTAMP=$TIMESTAMP" >> $CI_PROJECT_DIR/build.env
     - docker pull $CI_REGISTRY_IMAGE/$image_name:latest || true
     - docker build --progress=plain -f ./$dockerfile --cache-from $CI_REGISTRY_IMAGE/$image_name:latest
       --tag $CI_REGISTRY_IMAGE/$image_name:$TIMESTAMP_TAG
+      --tag $CI_REGISTRY_IMAGE/$image_name:latest
       .
     - docker push $CI_REGISTRY_IMAGE/$image_name:$TIMESTAMP_TAG
     - docker push $CI_REGISTRY_IMAGE/$image_name:latest
+  artifacts:
+    reports:
+      dotenv: build.env
 
 .promote:
   script:
@@ -79,17 +84,13 @@ promote_prod:
   stage: deploy
   variables:
     image_name: dspace-angular-dist
-    existing_tag: $CI_COMMIT_SHORT_SHA
-  parallel:
-    matrix:
-    - image_name:
-      - dspace-angular-dist
-      - matomo
-  before_script:
-    - apk add git
-    - new_tag=$(git describe --tags | tr "-" "." | cut -d "." -f1-3 | grep "[0-9]\.[0-9]\.[0-9]" || echo "$(git describe --tags).0")
-    - echo "Existing tag is $existing_tag, new tag is $new_tag"
+    existing_tag: test-$TIMESTAMP
+    new_tag: prod-$TIMESTAMP
   extends:
     - .promote
-  when: manual
-
+  needs:
+    - job: build_container
+      artifacts: true
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      when: manual
