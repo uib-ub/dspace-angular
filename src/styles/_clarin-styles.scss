@@ -83,5 +83,19 @@ ds-rss.override-css div {
 
 a {
     color: #424242; /* Make link darker as the background color might not be white */
-    text-decoration: underline !important;
+    text-decoration: underline;
+}
+
+/* CLARINO STYLING */
+
+.clarino {
+    /*background-color: #eee;
+    border-bottom: 2px solid var(--green);*/
+}
+
+.clarino img {
+    margin-bottom: -22px;
+    margin-top: -7px;
+    margin-left: -10px;
+    margin-right: 14px;
 }
