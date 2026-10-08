@@ -14,6 +14,7 @@
 .clarin-logo {
   height: var(--ds-login-logo-height);
   width: var(--ds-login-logo-width);
+  filter: invert(1);
 }
 
 .navbar-brand img {
@@ -353,6 +354,7 @@
   content: "";
   background: no-repeat center center;
   background-size: 100% 100%;
+  filter: invert(1);
 }
 @media (min-width: 992px) {
   .lindat-common2 .lindat-navbar-expand-lg {
@@ -473,6 +475,7 @@
   height: 22px;
   position: relative;
   top: -3px;
+  filter: invert(1);
 }
 .lindat-common2 .lindat-nav-link-clarin img {
   height: 37px;
