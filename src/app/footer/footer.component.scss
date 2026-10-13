@@ -76,9 +76,9 @@
    /*  Styling for light theme; maybe this can get set from outside? */
   --navbar-color: #000000;
   --navbar-background-color: #f0f0f0;
-  --footer-color: #408080;
+  --footer-color: black; /* Changed from #408080;*/
   --footer-background-color: #f0f0f0;
-  --partners-color: #408080;
+  --partners-color: black;
    
   /* XXX svg? */
   /* XXX fade? */
@@ -779,7 +779,7 @@
 .lindat-common2 #ack-ufal,
 .lindat-common2 #ack-freepik {
   font-size: smaller;
-  color: #ffffff;  /* Endret fra #7b8d9c */
+  color: var(--footer-color);  /* Endret fra #7b8d9c */
 }
 .lindat-common2 #ack-ufal a,
 .lindat-common2 #ack-freepik a,
@@ -788,7 +788,7 @@
 .lindat-common2 #ack-ufal a:visited,
 .lindat-common2 #ack-freepik a:visited {
   text-decoration: none;
-  color: #ffffff;  /* Endret fra #7b8d9c */
+  color: var(--footer-color);  /* Endret fra #7b8d9c */
   letter-spacing: 0.01em;
 }
 
