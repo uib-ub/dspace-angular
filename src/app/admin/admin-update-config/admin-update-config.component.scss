@@ -58,19 +58,19 @@
 .alert-info {
   background-color: #e7f3ff;
   border-left: 4px solid #17a2b8;
-  color: #0c5460;
+  color: black; /* Changed from   color: #0c5460; */
 }
 
 .alert-danger {
   background-color: #f8d7da;
   border-left: 4px solid #dc3545;
-  color: #721c24;
+  color: black; /* Changed from color: #721c24; */
 }
 
 .alert-warning {
   background-color: #fff3cd;
   border-left: 4px solid #ffc107;
-  color: #856404;
+  color: black; /* Changed from  856404*/
 }
 
 .badge {
