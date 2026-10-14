@@ -482,6 +482,10 @@
   font-weight: 300;
   letter-spacing: 0.4px;
 }
+.lindat-common2 .lindat-clarinb-logo img {
+  filter: invert(1) !important;
+}
+
 .lindat-common2 .lindat-nav-link-dariah img {
   height: 22px;
   position: relative;
@@ -690,9 +694,9 @@
 .lindat-common2 #badges-a img[src*=dsa2017] {
   height: 2.6em;
 }
-.lindat-common2 #badges-a img[src*=core] {
+/*.lindat-common2 #badges-a img[src*=core] {
   height: 2.9em;
-}
+}*/
 .lindat-common2 #badges-b img[alt="Home Page"] {
   height: 3em;
 }
