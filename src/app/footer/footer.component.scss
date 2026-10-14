@@ -68,18 +68,18 @@
   display: flex;
   justify-content: center;
   /* this can't hang on :root */
-  --navbar-color: #ffffff;
+/*  --navbar-color: #ffffff;
   --navbar-background-color: #39688b;
   --footer-color: #fffc;
   --footer-background-color: #07426eff;
-  --partners-color: #ffffff;  /* Changed from #9cb3c5 */
-  /* styling for light theme; maybe this can get set from outside?
+  --partners-color: #ffffff;  /\* Changed from #9cb3c5 *\/*/
+   /*  Styling for light theme; maybe this can get set from outside? */
   --navbar-color: #000000;
   --navbar-background-color: #f0f0f0;
-  --footer-color: #408080;
+  --footer-color: black; /* Changed from #408080;*/
   --footer-background-color: #f0f0f0;
-  --partners-color: #408080;
-   */
+  --partners-color: black;
+   
   /* XXX svg? */
   /* XXX fade? */
   /* roboto-slab-regular - latin_latin-ext */
@@ -482,6 +482,10 @@
   font-weight: 300;
   letter-spacing: 0.4px;
 }
+.lindat-common2 .lindat-clarinb-logo img {
+  filter: invert(1) !important;
+}
+
 .lindat-common2 .lindat-nav-link-dariah img {
   height: 22px;
   position: relative;
@@ -690,9 +694,9 @@
 .lindat-common2 #badges-a img[src*=dsa2017] {
   height: 2.6em;
 }
-.lindat-common2 #badges-a img[src*=core] {
+/*.lindat-common2 #badges-a img[src*=core] {
   height: 2.9em;
-}
+}*/
 .lindat-common2 #badges-b img[alt="Home Page"] {
   height: 3em;
 }
@@ -779,7 +783,7 @@
 .lindat-common2 #ack-ufal,
 .lindat-common2 #ack-freepik {
   font-size: smaller;
-  color: #ffffff;  /* Endret fra #7b8d9c */
+  color: var(--footer-color);  /* Endret fra #7b8d9c */
 }
 .lindat-common2 #ack-ufal a,
 .lindat-common2 #ack-freepik a,
@@ -788,7 +792,7 @@
 .lindat-common2 #ack-ufal a:visited,
 .lindat-common2 #ack-freepik a:visited {
   text-decoration: none;
-  color: #ffffff;  /* Endret fra #7b8d9c */
+  color: var(--footer-color);  /* Endret fra #7b8d9c */
   letter-spacing: 0.01em;
 }
 
