@@ -73,6 +73,14 @@
 .lindat-common2 .lindat-navbar {
   height: var(--lt-common-navbar-height);
 }
+/* collapsed menu: let the header grow so the open menu pushes the page down instead of covering it */
+@media (max-width: 991px) {
+  .lindat-common2.lindat-common-header,
+  .lindat-common2 .lindat-navbar {
+    height: auto;
+    min-height: var(--lt-common-navbar-height);
+  }
+}
 @media print {
   .lindat-common2 *,
   .lindat-common2 *::before,
